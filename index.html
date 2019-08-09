@@ -15,6 +15,26 @@
 
     <script src="index.js" charset="utf-8" defer></script>
 
+    <script type="text/javascript">
+    var waitTime = 3600;
+    function timeout(setTime) {
+        if(setTime != null){
+            waitTime = setTime;
+        }
+        document.body.innerHTML = waitTime;
+        if (waitTime < 0) {
+            waitTime = 3600;
+            document.body.innerHTML = '<input type="button" value="Click" onclick="timeout();" />';
+            return;
+        } else {
+            waitTime--;
+        }
+        setTimeout("timeout()", 1000);
+    }
+
+    </script>
+    <title>Insert title here</title>
+
   </head>
 
   <body>
@@ -61,7 +81,7 @@
         </div>
       </article>
 
-
+      <input type="button" value="Click" onclick="timeout();" />
 
 
   </body>
